@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_map"
+        android:title="Harta" />
+    <item
+        android:id="@+id/menu_history"
+        android:title="Istoric" />
+    <item
+        android:id="@+id/trasee_salvate"
+        android:title="Trasee salvate"/>
+</menu>

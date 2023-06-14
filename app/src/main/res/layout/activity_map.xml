@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            app:layout_constraintBottom_toTopOf="@id/patrat1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.244"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="88dp"
+            android:text="Stop"
+            app:layout_constraintBottom_toTopOf="@id/patrat1"
+            app:layout_constraintLeft_toRightOf="@id/start_button"
+            tools:ignore="MissingConstraints" />
+
+
+        <View
+            android:id="@+id/patrat1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/patrat2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/map_bot_navigation_menu" />
+
+        <View
+            android:id="@+id/patrat2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/patrat3"
+            app:layout_constraintStart_toEndOf="@id/patrat1"
+            app:layout_constraintBottom_toTopOf="@+id/map_bot_navigation_menu" />
+
+        <View
+            android:id="@+id/patrat3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/patrat2"
+            app:layout_constraintBottom_toTopOf="@+id/map_bot_navigation_menu" />
+
+        <View
+            android:id="@+id/patrat1_alb"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/patrat1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toStartOf="@id/patrat1"
+            app:layout_constraintTop_toTopOf="@id/patrat1"/>
+
+        <View
+            android:id="@+id/patrat2_alb"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintEnd_toEndOf="@id/patrat2"
+            app:layout_constraintStart_toStartOf="@id/patrat2"
+            app:layout_constraintTop_toTopOf="@id/patrat2" />
+
+        <View
+            android:id="@+id/patrat3_alb"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintEnd_toEndOf="@id/patrat3"
+            app:layout_constraintStart_toStartOf="@id/patrat3"
+            app:layout_constraintTop_toTopOf="@id/patrat3" />
+
+        <TextView
+            android:id="@+id/distance_textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/patrat1_alb"
+            app:layout_constraintLeft_toLeftOf="@id/patrat1_alb"
+            app:layout_constraintRight_toRightOf="@id/patrat1_alb"
+            android:text="Distanta"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/distanta_valoare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/distance_textview2"
+            app:layout_constraintLeft_toLeftOf="@id/patrat1_alb"
+            app:layout_constraintRight_toRightOf="@id/patrat1_alb"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:layout_marginTop="16dp"
+            android:text="0 m"
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:id="@+id/durata_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:text="Durata"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/patrat2_alb"
+            app:layout_constraintTop_toTopOf="@id/patrat2_alb"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/timer_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintTop_toBottomOf="@id/durata_textview"
+            app:layout_constraintLeft_toLeftOf="@id/durata_textview"
+            app:layout_constraintRight_toRightOf="@id/durata_textview" />
+
+        <TextView
+            android:id="@+id/viteza_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:text="Viteza: "
+            app:layout_constraintTop_toTopOf="@id/patrat3_alb"
+            app:layout_constraintLeft_toLeftOf="@id/patrat3_alb"
+            android:layout_marginLeft="40dp"
+            />
+
+        <TextView
+            android:id="@+id/viteza_valoare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 KM/H"
+            android:textSize="20sp"
+            android:textColor="@android:color/holo_blue_dark"
+            app:layout_constraintTop_toBottomOf="@id/viteza_textview"
+            app:layout_constraintLeft_toLeftOf="@id/viteza_textview"
+            app:layout_constraintRight_toRightOf="@id/viteza_textview"
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:id="@+id/viteza_medie_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:text="Viteza medie: "
+            app:layout_constraintLeft_toLeftOf="@id/viteza_textview"
+            app:layout_constraintRight_toRightOf="@id/viteza_textview"
+            app:layout_constraintTop_toBottomOf="@id/viteza_valoare" />
+
+        <TextView
+            android:id="@+id/viteza_medie_valoare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 KM/H"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/viteza_medie_textview"
+            app:layout_constraintLeft_toLeftOf="@id/viteza_medie_textview"
+            app:layout_constraintRight_toRightOf="@id/viteza_medie_textview" />
+
+        <View
+            android:id="@+id/vreme_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/patrat3"
+            app:layout_constraintStart_toStartOf="@id/stop_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/temperatura_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperatura: "
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toTopOf="@id/vreme_view"
+            app:layout_constraintLeft_toLeftOf="@id/vreme_view"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/umiditate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Umiditatea: "
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@id/temperatura_textview"
+            app:layout_constraintLeft_toLeftOf="@id/vreme_view" />
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/map_bot_navigation_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:menu="@menu/map_bot_navigation_menu"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/map_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/map_menu_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

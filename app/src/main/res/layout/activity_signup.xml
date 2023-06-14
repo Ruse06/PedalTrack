@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/buttonSignInGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up / sign in folosind google"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonSignInEmailPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonSignInGoogle"
+        android:layout_marginBottom="30px"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PedalTrack"
+        android:textSize="50sp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextEmail"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintEnd_toStartOf="@id/editTextEmail"
+        app:layout_constraintBottom_toBottomOf="@id/editTextEmail"
+        android:layout_marginRight="80px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parola"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintEnd_toStartOf="@id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="@id/editTextPassword"
+        android:layout_marginRight="80px"/>
+
+    <TextView
+        android:id="@+id/signInTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        tools:ignore="MissingConstraints"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSignInGoogle"
+        android:layout_marginTop="60px"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        app:layout_constraintBottom_toTopOf="@id/editTextPassword"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="180px"
+        android:layout_marginBottom="80px"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        app:layout_constraintBottom_toTopOf="@id/buttonSignInEmailPassword"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="180px"
+        android:layout_marginBottom="80px"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

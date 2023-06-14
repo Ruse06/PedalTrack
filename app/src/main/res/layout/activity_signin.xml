@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/titlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autentificare"
+        android:textSize="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="300px"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/titlu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="150px"/>
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/textViewEmail"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@id/textViewEmail"
+        android:layout_marginLeft="100px"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textViewParola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parola"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/textViewEmail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="150px"/>
+
+    <EditText
+        android:id="@+id/editTextParola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="@id/textViewParola"
+        app:layout_constraintLeft_toRightOf="@id/textViewParola"
+        android:layout_marginLeft="80px"/>
+
+    <TextView
+        android:id="@+id/parolaUitataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi-am uitat parola"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/editTextParola"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100px"/>
+
+    <Button
+        android:id="@+id/signinButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextParola"
+        android:layout_marginTop="300px"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
