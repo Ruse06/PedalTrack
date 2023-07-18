@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/titlu_obiectiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setează un obiectiv"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tip_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tip de obiectiv"
+        app:layout_constraintTop_toBottomOf="@+id/titlu_obiectiv"
+        tools:ignore="MissingConstraints"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/tip_textview"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <RadioButton
+            android:id="@+id/radioButtonDistanta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distanta (metri)"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonDurata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durata (minute)"
+            android:textSize="20dp"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/valoare_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valoare obiectiv"
+        tools:ignore="MissingConstraints"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    <EditText
+        android:id="@+id/valoare_obiectiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/valoare_textview"
+        android:layout_marginTop="15dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/butonGata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="50dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

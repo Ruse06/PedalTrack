@@ -1,5 +1,4 @@
 package com.example.firebaseauth
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.model.LatLng
@@ -47,15 +45,14 @@ class IstoricAdapter ( private val listaCurse: kotlin.collections.MutableList<Cu
             val dialog = mesajAlerta.create()
             dialog.show()
         }
+
+
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, MapActivity::class.java)
-
             val traseuLatLng = ArrayList<LatLng>()
-            for (punct in item_curent.traseu!!) {
+            for (punct in item_curent.traseu!!)
                 traseuLatLng.add(LatLng(punct.latitude, punct.longitude))
-            }
-
             val bundle = Bundle()
             bundle.putParcelableArrayList("traseu", traseuLatLng)
             bundle.putInt("distanta", item_curent.distanta!!)
@@ -64,6 +61,21 @@ class IstoricAdapter ( private val listaCurse: kotlin.collections.MutableList<Cu
             intent.putExtra("bundle", bundle)
             context.startActivity(intent)
         }
+
+        holder.distribuie_buton.setOnClickListener{
+            val context = holder.itemView.context
+
+            val message = "Am terminat o cursă folosind PedalTrack: " +
+                    "Distanta: ${item_curent.distanta} m, " +
+                    "Viteza medie: ${item_curent.viteza} KM/H, " +
+                    "Durata: ${item_curent.durata}."
+
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            context.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -98,5 +110,6 @@ class IstoricAdapter ( private val listaCurse: kotlin.collections.MutableList<Cu
         var data : TextView = itemView.findViewById(R.id.data_item)
         var delete_buton : Button = itemView.findViewById(R.id.delete_buton)
         var durata : TextView = itemView.findViewById(R.id.durata_item)
+        var distribuie_buton : Button = itemView.findViewById(R.id.share_button)
     }
 }

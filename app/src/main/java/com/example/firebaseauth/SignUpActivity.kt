@@ -80,8 +80,6 @@ class SignUpActivity: AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        Log.d(TAG, "createUserWithEmail:success")
-                        Toast.makeText(this, "Parola: $password", Toast.LENGTH_SHORT).show()
                         val user = auth.currentUser
                         val db = FirebaseFirestore.getInstance()
                         val data = hashMapOf(
@@ -90,12 +88,10 @@ class SignUpActivity: AppCompatActivity() {
                         val docRef = db.collection("users").document(user!!.uid).set(data)
                         updateUI(user)
                     } else {
-                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                        Toast.makeText(this, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Eroare la crearea contului.", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
-
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         auth = Firebase.auth
     }
@@ -119,7 +115,7 @@ class SignUpActivity: AppCompatActivity() {
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
-                Log.w(TAG, "Google sign in failed", e)
+                Log.w(TAG, "Autentificarea prin Google a esuat", e)
             }
         }
     }

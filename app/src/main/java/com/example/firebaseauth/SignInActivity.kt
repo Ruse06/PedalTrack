@@ -58,7 +58,7 @@ class SignInActivity: AppCompatActivity() {
             auth.signInWithEmailAndPassword(emailString, parolaString)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Autentificare reusita!", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, MapActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)

@@ -68,7 +68,7 @@ class CurseSalvateActivity: AppCompatActivity() {
                     for (document in querySnapshot){
                         val distanta = (document.get("distanta") as Long).toInt()
                         val data = document.getString("data")
-                        val ruta = document.get("traseu") as? List<GeoPoint>
+                        val ruta = document.get("ruta") as? List<GeoPoint>
                         val titlu = document.getString("titlu")
                         val traseu = Traseu(titlu, ruta, data, distanta)
                         listaTrasee.add(traseu)

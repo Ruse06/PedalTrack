@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.GeoPoint
 
 class CurseSalvateAdapter(private val listaTraseu: kotlin.collections.MutableList<Traseu>) : RecyclerView.Adapter<CurseSalvateAdapter.MyViewHolder>() {
 
@@ -32,7 +34,7 @@ class CurseSalvateAdapter(private val listaTraseu: kotlin.collections.MutableLis
         holder.itemView.layoutParams.height = itemHeight
         holder.titlu.text = "Titlu: " + item_curent.titlu.toString()
         holder.data.text = "Data: " + item_curent.data.toString()
-        holder.distanta.text = "Distanta planificata: " + item_curent.distanta
+        holder.distanta.text = "Distanta planificata: " + item_curent.distanta + "m"
         holder.delete_buton.setOnClickListener {
             val mesajAlerta = AlertDialog.Builder(holder.itemView.context)
             mesajAlerta.setTitle("Doriți să ștergeți planificarea?")
@@ -48,13 +50,12 @@ class CurseSalvateAdapter(private val listaTraseu: kotlin.collections.MutableLis
         }
         holder.open_buton.setOnClickListener {
             val traseuLatLng = ArrayList<LatLng>()
-            for (punct in item_curent.traseu!!) {
+            for (punct in item_curent.ruta!!)
                 traseuLatLng.add(LatLng(punct.latitude, punct.longitude))
-            }
             val context = holder.itemView.context
             val intent = Intent(context, MapActivity::class.java)
             val bundle = Bundle()
-            bundle.putParcelableArrayList("traseu", traseuLatLng)
+            bundle.putParcelableArrayList("ruta", traseuLatLng)
             bundle.putInt("distanta", item_curent.distanta!!)
             bundle.putString("titlu", item_curent.titlu!!)
             bundle.putString("data", item_curent.data!!)

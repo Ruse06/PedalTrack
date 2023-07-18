@@ -10,5 +10,14 @@
         <item
             android:id="@+id/destinatie"
             android:title="Alege o destinatie" />
+        <item
+            android:id="@+id/locatie"
+            android:title="Unde sunt?" />
+        <item
+            android:id="@+id/obiective"
+            android:title="Stabileste un obiectiv" />
+        <item
+            android:id="@+id/informatii"
+            android:title="Cat am pedalat?" />
     </group>
 </menu>
